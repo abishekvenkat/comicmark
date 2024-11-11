@@ -3,20 +3,20 @@
   import { format } from 'date-fns';
   
   let searchTerm = '';
-  let selectedGang = '';
-  let allGangs: string[] = [];
+  let selectedtag = '';
+  let alltags: string[] = [];
 
   $: {
-    allGangs = Array.from(
-      new Set($bookmarks.flatMap(b => b.gangs))
+    alltags = Array.from(
+      new Set($bookmarks.flatMap(b => b.tags))
     ).sort();
   }
 
   $: filteredBookmarks = $bookmarks.filter(bookmark => {
     const matchesSearch = bookmark.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          bookmark.url.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesGang = !selectedGang || bookmark.gangs.includes(selectedGang);
-    return matchesSearch && matchesGang;
+    const matchestag = !selectedtag || bookmark.tags.includes(selectedtag);
+    return matchesSearch && matchestag;
   });
 
   function copyToClipboard(url: string) {
@@ -36,10 +36,10 @@
     class="search-input"
   />
   
-  <select bind:value={selectedGang} class="gang-select">
-    <option value="">All Gangs</option>
-    {#each allGangs as gang}
-      <option value={gang}>{gang}</option>
+  <select bind:value={selectedtag} class="tag-select">
+    <option value="">All tags</option>
+    {#each alltags as tag}
+      <option value={tag}>{tag}</option>
     {/each}
   </select>
 </div>
@@ -78,9 +78,9 @@
         {bookmark.url}
       </a>
 
-      <div class="gangs">
-        {#each bookmark.gangs as gang}
-          <span class="tag">{gang}</span>
+      <div class="tags">
+        {#each bookmark.tags as tag}
+          <span class="tag">{tag}</span>
         {/each}
       </div>
 
@@ -102,7 +102,7 @@
     gap: 1rem;
   }
 
-  .search-input, .gang-select {
+  .search-input, .tag-select {
     padding: 0.8rem;
     border: 2px solid var(--border-color);
     background: #fff;
@@ -150,7 +150,7 @@
     font-size: 1rem;
   }
 
-  .gangs {
+  .tags {
     margin-top: 1rem;
   }
 

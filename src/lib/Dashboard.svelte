@@ -6,7 +6,7 @@
   $: dashboard = calculateDashboard($bookmarks);
 
   function calculateDashboard($bookmarks): Dashboard {
-    const gangs = new Set($bookmarks.flatMap(b => b.gangs));
+    const tags = new Set($bookmarks.flatMap(b => b.tags));
     const upcomingLinks = $bookmarks.filter(b => {
       if (!b.deadline) return false;
       const daysUntilDeadline = differenceInDays(
@@ -18,7 +18,7 @@
 
     return {
       totalLinks: $bookmarks.length,
-      totalGangs: gangs.size,
+      totaltags: tags.size,
       upcomingLinks
     };
   }
@@ -32,13 +32,13 @@
     <div class="stat">
       <div class="stat-burst">
         <span class="number">{dashboard.totalLinks}</span>
-        <span class="label">Total Links</span>
+        <span class="label">Total Links!</span>
       </div>
     </div>
     <div class="stat">
       <div class="stat-burst">
-        <span class="number">{dashboard.totalGangs}</span>
-        <span class="label">Total Gangs</span>
+        <span class="number">{dashboard.totaltags}</span>
+        <span class="label">Total tags!</span>
       </div>
     </div>
     <div class="stat">

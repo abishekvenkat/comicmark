@@ -2,7 +2,7 @@ export interface Bookmark {
   id: string;
   url: string;
   title: string;
-  gangs: string[];
+  tags: string[];
   isRead: boolean;
   deadline?: string;
   createdAt: string;
@@ -10,6 +10,6 @@ export interface Bookmark {
 
 export interface Dashboard {
   totalLinks: number;
-  totalGangs: number;
+  totaltags: number;
   upcomingLinks: number;
 }

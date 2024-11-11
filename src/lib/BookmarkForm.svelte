@@ -7,7 +7,7 @@
 
   let url = '';
   let title = '';
-  let gangs = '';
+  let tags = '';
   let deadline = '';
 
   function handleSubmit() {
@@ -15,7 +15,7 @@
       id: crypto.randomUUID(),
       url,
       title,
-      gangs: gangs.split(',').map(g => g.trim()).filter(g => g),
+      tags: tags.split(',').map(g => g.trim()).filter(g => g),
       isRead: false,
       deadline: deadline || undefined,
       createdAt: new Date().toISOString()
@@ -50,8 +50,8 @@
   <div class="form-group">
     <input
       type="text"
-      bind:value={gangs}
-      placeholder="Enter Gangs (comma-separated)"
+      bind:value={tags}
+      placeholder="Enter tags (comma-separated)"
     />
   </div>
 

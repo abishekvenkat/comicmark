@@ -7,7 +7,7 @@ Comicmark is a fun and stylish web application designed to help you manage your 
 
 ### Features
 
-- **Add Bookmarks**: Quickly add new bookmarks with URLs, titles, associated tags (gangs), and optional deadlines.
+- **Add Bookmarks**: Quickly add new bookmarks with URLs, titles, associated tags, and optional deadlines.
 - **Manage Bookmarks**: View, search, and filter your bookmarks by title, URL, or tags.
 - **Read Status**: Mark bookmarks as read or unread, with a visual indicator.
 - **Deadline Tracking**: Keep track of upcoming deadlines for your bookmarks.
