@@ -42,6 +42,8 @@ To get started with Comicmark, follow these steps:
 - **Deleting a Bookmark**: Click the "Delete" button next to any bookmark to remove it from your list.
 - **Marking as Read**: Use the checkbox next to each bookmark to mark it as read or unread.
 
+![comicmark-screen](/comicmark-screen.png)
+
 ### Contributing
 
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
